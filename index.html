@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mohammad AI</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#07111f;
+    color:white;
+    transition:.4s;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(7,17,31,.9);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+    max-width:1150px;
+    margin:auto;
+    padding:16px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+    color:#55d6ff;
+}
+
+.logo span{
+    color:white;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#55d6ff;
+}
+
+.small-btn{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    color:white;
+    border-radius:12px;
+    padding:9px 12px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:130px 20px 80px;
+
+    background:
+    radial-gradient(circle at 20% 20%,rgba(0,180,255,.18),transparent 30%),
+    radial-gradient(circle at 80% 70%,rgba(120,50,255,.18),transparent 30%);
+}
+
+.hero-content{
+    max-width:950px;
+    animation:fadeUp 1s ease;
+}
+
+/* FLAGS */
+
+.travel{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    margin-bottom:35px;
+    font-size:48px;
+}
+
+.plane{
+    animation:fly 2.5s infinite ease-in-out;
+}
+
+.country{
+    font-size:15px;
+    color:#b7c4d5;
+}
+
+@keyframes fly{
+
+    0%{
+        transform:translateX(-10px) translateY(0);
+    }
+
+    50%{
+        transform:translateX(10px) translateY(-8px);
+    }
+
+    100%{
+        transform:translateX(-10px) translateY(0);
+    }
+
+}
+
+/* HERO TEXT */
+
+.badge{
+    display:inline-block;
+    background:rgba(85,214,255,.12);
+    border:1px solid rgba(85,214,255,.35);
+    color:#70ddff;
+    padding:10px 20px;
+    border-radius:30px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(38px,7vw,75px);
+    line-height:1.15;
+    margin-bottom:25px;
+}
+
+.gradient{
+    background:linear-gradient(
+        90deg,
+        #55d6ff,
+        #9d7cff,
+        #55d6ff
+    );
+
+    background-size:200%;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    animation:gradientMove 4s infinite linear;
+}
+
+.hero p{
+    color:#b8c4d4;
+    font-size:18px;
+    line-height:2;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.primary{
+    border:0;
+
+    background:
+    linear-gradient(
+        135deg,
+        #20bfff,
+        #755cff
+    );
+
+    color:white;
+    padding:15px 25px;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.secondary{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+    padding:15px 25px;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* SECTIONS */
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:90px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.section-title p{
+    color:#91a0b5;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(220px,1fr)
+    );
+
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:22px;
+    padding:28px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(85,214,255,.4);
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:18px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#9baabd;
+    line-height:1.9;
+}
+
+/* AI */
+
+.ai-box{
+    max-width:850px;
+    margin:auto;
+
+    background:rgba(255,255,255,.045);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.3);
+}
+
+.ai-header{
+    padding:18px 20px;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:space-between;
+}
+
+.status{
+    color:#5cff9d;
+}
+
+.chat{
+    height:400px;
+    overflow-y:auto;
+    padding:20px;
+}
+
+.message{
+    max-width:80%;
+    padding:13px 16px;
+    border-radius:17px;
+    margin-bottom:13px;
+    line-height:1.8;
+}
+
+.bot{
+    background:#182536;
+}
+
+.user{
+    background:
+    linear-gradient(
+        135deg,
+        #245d85,
+        #463d91
+    );
+
+    margin-left:auto;
+}
+
+.ai-input{
+    display:flex;
+    gap:10px;
+    padding:15px;
+
+    border-top:
+    1px solid rgba(255,255,255,.08);
+}
+
+.ai-input input{
+    flex:1;
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    background:#0c1725;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:13px;
+
+    outline:none;
+}
+
+.ai-input button{
+    border:0;
+    background:#2abfff;
+    color:#00121d;
+
+    padding:0 20px;
+
+    border-radius:13px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+/* HISTORY */
+
+.history{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    align-items:center;
+}
+
+.history-image{
+    min-height:350px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.5)
+    ),
+
+    url(
+    "https://upload.wikimedia.org/wikipedia/commons/3/3a/Persepolis_Tachara.jpg"
+    );
+
+    background-size:cover;
+    background-position:center;
+}
+
+.history-text h3{
+    font-size:34px;
+    margin-bottom:18px;
+}
+
+.history-text p{
+    color:#aeb9c9;
+    line-height:2;
+    margin-bottom:18px;
+}
+
+/* CODE */
+
+.code-box{
+    background:#050b12;
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    overflow:auto;
+
+    direction:ltr;
+
+    text-align:left;
+}
+
+.code-box pre{
+    color:#9ee8ff;
+    line-height:1.8;
+}
+
+/* ========================= */
+/* SURVEY */
+/* ========================= */
+
+.survey-box{
+    max-width:800px;
+    margin:auto;
+
+    background:
+    rgba(255,255,255,.045);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
+}
+
+.stars{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+
+    direction:ltr;
+
+    margin:20px 0;
+}
+
+.star{
+    font-size:42px;
+    cursor:pointer;
+
+    filter:grayscale(1);
+
+    transition:.2s;
+}
+
+.star:hover{
+    transform:scale(1.15);
+}
+
+.star.active{
+    filter:grayscale(0);
+}
+
+.survey-box textarea{
+    width:100%;
+    min-height:120px;
+
+    resize:vertical;
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    background:#0c1725;
+
+    color:white;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    outline:none;
+
+    margin-bottom:15px;
+}
+
+.rating-text{
+    color:#91a0b5;
+    margin-bottom:20px;
+}
+
+.survey-result{
+    margin-top:25px;
+
+    padding:15px;
+
+    background:
+    rgba(85,214,255,.08);
+
+    border-radius:15px;
+
+    line-height:2;
+}
+
+.reviews{
+    margin-top:25px;
+    text-align:left;
+}
+
+.review{
+    background:#101d2d;
+
+    border:
+    1px solid rgba(255,255,255,.07);
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-top:12px;
+}
+
+.review-stars{
+    margin-bottom:8px;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:
+    1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    color:#8290a4;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:200%;
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    nav{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .travel{
+        font-size:38px;
+    }
+
+    .history{
+        grid-template-columns:1fr;
+    }
+
+    .history-image{
+        min-height:260px;
+    }
+
+    .chat{
+        height:350px;
+    }
+
+    .survey-box{
+        padding:22px;
+    }
+
+    .star{
+        font-size:35px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+🤖 <span>Mohammad</span> AI
+</div>
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#ai">AI</a>
+<a href="#history">History</a>
+<a href="#learn">Learning</a>
+<a href="#survey">Survey</a>
+
+</nav>
+
+<button
+class="small-btn"
+onclick="toggleTheme()">
+
+☀️
+
+</button>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+<div class="hero-content">
+
+
+<div class="travel">
+
+<div>
+
+🇮🇷
+
+<div class="country">
+Iran
+</div>
+
+</div>
+
+
+<div class="plane">
+✈️
+</div>
+
+
+<div>
+
+🇺🇸
+
+<div class="country">
+America
+</div>
+
+</div>
+
+</div>
+
+
+<div class="badge">
+
+🌍 Explore • Learn • Create
+
+</div>
+
+
+<h1>
+
+Explore the World,<br>
+
+<span class="gradient">
+Discover History
+</span>
+
+and Build the Future with AI
+
+</h1>
+
+
+<p>
+
+Explore amazing places, discover history,
+learn programming and build your own
+artificial intelligence.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<button
+class="primary"
+onclick="document.getElementById('ai').scrollIntoView()">
+
+🤖 Try My AI
+
+</button>
+
+
+<button
+class="secondary"
+onclick="document.getElementById('history').scrollIntoView()">
+
+🏛️ Explore History
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FEATURES -->
+
+<section>
+
+<div class="section-title">
+
+<h2>
+✨ What You Can Explore
+</h2>
+
+<p>
+Learn, discover and create.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">🤖</div>
+
+<h3>
+Artificial Intelligence
+</h3>
+
+<p>
+Explore AI and learn how intelligent
+systems work.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌍</div>
+
+<h3>
+World
+</h3>
+
+<p>
+Discover countries, cultures and
+interesting places around the world.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">💻</div>
+
+<h3>
+Programming
+</h3>
+
+<p>
+Learn HTML, CSS, JavaScript and Python.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🏛️</div>
+
+<h3>
+Iranian History
+</h3>
+
+<p>
+Discover the history and civilization
+of ancient Iran.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- AI -->
+
+<section id="ai">
+
+<div class="section-title">
+
+<h2>
+🤖 My AI
+</h2>
+
+<p>
+Talk with your bilingual AI assistant.
+</p>
+
+</div>
+
+
+<div class="ai-box">
+
+<div class="ai-header">
+
+<strong>
+🤖 Mohammad AI
+</strong>
+
+<span class="status">
+● Online
+</span>
+
+</div>
+
+
+<div class="chat" id="chat">
+
+<div class="message bot">
+
+Hello! 👋<br>
+
+I am your bilingual AI assistant.<br>
+
+You can talk to me in English or Persian. 🇮🇷🇺🇸
+
+</div>
+
+</div>
+
+
+<div class="ai-input">
+
+<input
+id="userInput"
+type="text"
+placeholder="Write your message..."
+onkeydown="if(event.key==='Enter') sendMessage()"
+>
+
+<button onclick="sendMessage()">
+Send 🚀
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HISTORY -->
+
+<section id="history">
+
+<div class="section-title">
+
+<h2>
+🏛️ Iranian History
+</h2>
+
+<p>
+Discover one of the most famous ancient sites of Iran.
+</p>
+
+</div>
+
+
+<div class="history">
+
+<div class="history-image"></div>
+
+
+<div class="history-text">
+
+<h3>
+Persepolis
+</h3>
+
+<p>
+
+Persepolis is one of the most famous
+archaeological sites in Iran and an important
+symbol of the Achaemenid period.
+
+</p>
+
+<p>
+
+The ancient complex is located near
+Marvdasht in Fars Province.
+
+</p>
+
+<button
+class="primary"
+onclick="alert('Persepolis is one of Iran’s most important historical sites. 🏛️')">
+
+Learn More
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LEARNING -->
+
+<section id="learn">
+
+<div class="section-title">
+
+<h2>
+💻 Learn Programming
+</h2>
+
+<p>
+Start building your own digital projects.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">🌐</div>
+
+<h3>HTML</h3>
+
+<p>
+Build the structure of websites.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎨</div>
+
+<h3>CSS</h3>
+
+<p>
+Design websites with colors,
+layouts and animations.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">⚡</div>
+
+<h3>JavaScript</h3>
+
+<p>
+Make websites interactive.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🐍</div>
+
+<h3>Python</h3>
+
+<p>
+Learn a powerful programming language
+used in many AI projects.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CODE -->
+
+<section>
+
+<div class="section-title">
+
+<h2>
+🧠 My First AI Code
+</h2>
+
+<p>
+Your programming journey starts here.
+</p>
+
+</div>
+
+
+<div class="code-box">
+
+<pre>
+
+print("Hello AI!")
+
+name = input("What is your name? ")
+
+print("Hello", name)
+
+if name == "Mohammad":
+    print("Welcome to my AI 🤖")
+
+</pre>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- SURVEY -->
+<!-- ========================= -->
+
+<section id="survey">
+
+<div class="section-title">
+
+<h2>
+⭐ Website Survey
+</h2>
+
+<p>
+Tell me what you think about this website.
+</p>
+
+</div>
+
+
+<div class="survey-box">
+
+<h3>
+How would you rate this website?
+</h3>
+
+
+<div class="stars">
+
+<span class="star" data-rating="1"
+onclick="selectRating(1)">★</span>
+
+<span class="star" data-rating="2"
+onclick="selectRating(2)">★</span>
+
+<span class="star" data-rating="3"
+onclick="selectRating(3)">★</span>
+
+<span class="star" data-rating="4"
+onclick="selectRating(4)">★</span>
+
+<span class="star" data-rating="5"
+onclick="selectRating(5)">★</span>
+
+</div>
+
+
+<div class="rating-text" id="ratingText">
+Choose a rating from 1 to 5
+</div>
+
+
+<textarea
+id="reviewText"
+placeholder="Write your opinion about the website..."
+></textarea>
+
+
+<button
+class="primary"
+onclick="submitReview()">
+
+Submit Review ⭐
+
+</button>
+
+
+<div
+class="survey-result"
+id="surveyResult">
+
+No reviews yet.
+
+</div>
+
+
+<div
+class="reviews"
+id="reviews">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+🤖 Mohammad AI
+</p>
+
+<p style="margin-top:10px;">
+Explore the World • Discover History • Build the Future
+</p>
+
+<p style="margin-top:10px;">
+© 2026
+</p>
+
+</footer>
+
+
+<script>
+
+/* ========================= */
+/* THEME */
+/* ========================= */
+
+function toggleTheme(){
+
+    const body =
+    document.body;
+
+    if(
+        body.dataset.theme !== "light"
+    ){
+
+        body.dataset.theme="light";
+
+        body.style.background="#f4f7fb";
+        body.style.color="#101827";
+
+    }else{
+
+        body.dataset.theme="dark";
+
+        body.style.background="#07111f";
+        body.style.color="white";
+
+    }
+
+}
+
+
+/* ========================= */
+/* AI */
+/* ========================= */
+
+function sendMessage(){
+
+    const input =
+    document.getElementById("userInput");
+
+    const text =
+    input.value.trim();
+
+    if(!text) return;
+
+    addMessage(text,"user");
+
+    input.value="";
+
+
+    setTimeout(function(){
+
+        const answer =
+        getAIAnswer(text);
+
+        addMessage(answer,"bot");
+
+    },500);
+
+}
+
+
+function addMessage(text,type){
+
+    const chat =
+    document.getElementById("chat");
+
+    const div =
+    document.createElement("div");
+
+    div.className=
+    "message "+type;
+
+    div.innerHTML=
+    text;
+
+    chat.appendChild(div);
+
+    chat.scrollTop=
+    chat.scrollHeight;
+
+}
+
+
+function getAIAnswer(text){
+
+    const t=
+    text.toLowerCase();
+
+
+    if(
+        t.includes("hello") ||
+        t.includes("hi")
+    ){
+
+        return "Hello! 👋 Nice to meet you. I'm Mohammad AI.";
+
+    }
+
+
+    if(
+        t.includes("سلام") ||
+        t.includes("درود")
+    ){
+
+        return "سلام! 👋 خوش اومدی. من Mohammad AI هستم 🤖";
+
+    }
+
+
+    if(
+        t.includes("how are you")
+    ){
+
+        return "I'm doing great! 🤖";
+
+    }
+
+
+    if(
+        t.includes("خوبی")
+    ){
+
+        return "ممنون! 😎 من آماده‌ام.";
+
+    }
+
+
+    if(
+        t.includes("what is ai") ||
+        t.includes("هوش مصنوعی چیست")
+    ){
+
+        return "AI means Artificial Intelligence — هوش مصنوعی 🤖";
+
+    }
+
+
+    if(
+        t.includes("python") ||
+        t.includes("پایتون")
+    ){
+
+        return "Python is a popular programming language used in many AI projects 🐍";
+
+    }
+
+
+    if(
+        t.includes("persepolis") ||
+        t.includes("تخت جمشید")
+    ){
+
+        return "Persepolis is one of Iran's most famous ancient historical sites 🏛️🇮🇷";
+
+    }
+
+
+    return "Interesting! 🤔 I'm still learning. Ask me about AI, Python, programming or Persepolis.";
+
+}
+
+
+/* ========================= */
+/* SURVEY */
+/* ========================= */
+
+let selectedRating=0;
+
+
+/* SELECT STAR */
+
+function selectRating(rating){
+
+    selectedRating=rating;
+
+    const stars=
+    document.querySelectorAll(".star");
+
+
+    stars.forEach(function(star){
+
+        const value=
+        Number(
+            star.dataset.rating
+        );
+
+        if(value<=rating){
+
+            star.classList.add("active");
+
+        }else{
+
+            star.classList.remove("active");
+
+        }
+
+    });
+
+
+    document.getElementById(
+        "ratingText"
+    ).innerText=
+    "You selected "+rating+" out of 5 stars ⭐";
+
+}
+
+
+/* SUBMIT */
+
+function submitReview(){
+
+    const text=
+    document.getElementById(
+        "reviewText"
+    ).value.trim();
+
+
+    if(selectedRating===0){
+
+        alert(
+            "Please choose a rating first ⭐"
+        );
+
+        return;
+
+    }
+
+
+    if(text===""){
+
+        alert(
+            "Please write your opinion."
+        );
+
+        return;
+
+    }
+
+
+    const reviews=
+    JSON.parse(
+        localStorage.getItem(
+            "mohammadAI_reviews"
+        ) || "[]"
+    );
+
+
+    reviews.push({
+
+        rating:selectedRating,
+
+        text:text,
+
+        date:new Date()
+        .toLocaleDateString()
+
+    });
+
+
+    localStorage.setItem(
+        "mohammadAI_reviews",
+        JSON.stringify(reviews)
+    );
+
+
+    document.getElementById(
+        "reviewText"
+    ).value="";
+
+
+    selectedRating=0;
+
+
+    document.querySelectorAll(
+        ".star"
+    ).forEach(function(star){
+
+        star.classList.remove(
+            "active"
+        );
+
+    });
+
+
+    document.getElementById(
+        "ratingText"
+    ).innerText=
+    "Thank you for your review! ❤️";
+
+
+    loadReviews();
+
+}
+
+
+/* LOAD REVIEWS */
+
+function loadReviews(){
+
+    const reviews=
+    JSON.parse(
+        localStorage.getItem(
+            "mohammadAI_reviews"
+        ) || "[]"
+    );
+
+
+    const container=
+    document.getElementById(
+        "reviews"
+    );
+
+
+    const result=
+    document.getElementById(
+        "surveyResult"
+    );
+
+
+    if(reviews.length===0){
+
+        result.innerHTML=
+        "No reviews yet.";
+
+        container.innerHTML="";
+
+        return;
+
+    }
+
+
+    let total=0;
+
+    reviews.forEach(function(review){
+
+        total+=review.rating;
+
+    });
+
+
+    const average=
+    (total/reviews.length)
+    .toFixed(1);
+
+
+    result.innerHTML=
+    "⭐ Average rating: <b>"
+    +average+
+    "</b> / 5<br>"
+    +"👥 Total reviews: <b>"
+    +reviews.length+
+    "</b>";
+
+
+    container.innerHTML="";
+
+
+    reviews
+    .slice()
+    .reverse()
+    .forEach(function(review){
+
+        const div=
+        document.createElement(
+            "div"
+        );
+
+        div.className="review";
+
+
+        let stars="";
+
+        for(
+            let i=1;
+            i<=5;
+            i++
+        ){
+
+            stars+=
+            i<=review.rating
+            ? "⭐"
+            : "☆";
+
+        }
+
+
+        div.innerHTML=
+        '<div class="review-stars">'
+        +stars+
+        '</div>'
+        +'<div>'
+        +escapeHTML(review.text)
+        +'</div>'
+        +'<small style="color:#8290a4">'
+        +review.date+
+        '</small>';
+
+
+        container.appendChild(div);
+
+    });
+
+}
+
+
+/* SECURITY */
+
+function escapeHTML(text){
+
+    const div=
+    document.createElement("div");
+
+    div.textContent=text;
+
+    return div.innerHTML;
+
+}
+
+
+/* START */
+
+loadReviews();
+
+</script>
+
+</body>
+</html>
