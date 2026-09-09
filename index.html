@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mohammad Mohammadi | Student & Future Computer Scientist</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#07111f;
+    --card:#0d1b2e;
+    --text:#f4f7fb;
+    --muted:#aebbd0;
+    --gold:#d4af37;
+    --blue:#5da9ff;
+    --border:rgba(255,255,255,.1);
+}
+
+body.light{
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --text:#101827;
+    --muted:#5d6878;
+    --border:rgba(0,0,0,.1);
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    transition:.3s;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    backdrop-filter:blur(15px);
+    background:rgba(7,17,31,.82);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-container{
+    max-width:1150px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:var(--muted);
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.theme{
+    border:1px solid var(--border);
+    background:transparent;
+    color:var(--text);
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 70px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(93,169,255,.12);
+    filter:blur(100px);
+    border-radius:50%;
+}
+
+.hero-content{
+    position:relative;
+    max-width:900px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 16px;
+    border:1px solid var(--border);
+    border-radius:30px;
+    color:var(--gold);
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(45px,8vw,85px);
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:var(--muted);
+    font-size:19px;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:13px 25px;
+    border-radius:8px;
+    border:1px solid var(--gold);
+    transition:.3s;
+}
+
+.btn.primary{
+    background:var(--gold);
+    color:#07111f;
+    font-weight:bold;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* SECTIONS */
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:100px 20px;
+}
+
+.section-title{
+    margin-bottom:50px;
+}
+
+.section-title small{
+    color:var(--gold);
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    font-size:40px;
+    margin-top:8px;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+}
+
+.about p{
+    color:var(--muted);
+    font-size:17px;
+}
+
+.info-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:30px;
+    border-radius:14px;
+}
+
+.info-card div{
+    padding:12px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.info-card div:last-child{
+    border-bottom:0;
+}
+
+/* SKILLS */
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.skill{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:28px;
+    border-radius:14px;
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-7px);
+    border-color:var(--gold);
+}
+
+.skill h3{
+    margin-bottom:10px;
+}
+
+.skill p{
+    color:var(--muted);
+}
+
+/* PROJECTS */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.project{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:30px;
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-6px);
+    border-color:var(--blue);
+}
+
+.project-number{
+    color:var(--gold);
+    font-size:14px;
+}
+
+.project h3{
+    margin:12px 0;
+    font-size:23px;
+}
+
+.project p{
+    color:var(--muted);
+}
+
+.tag{
+    display:inline-block;
+    margin-top:18px;
+    margin-right:6px;
+    padding:5px 10px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    font-size:13px;
+}
+
+/* RESEARCH */
+
+.research{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:40px;
+}
+
+.research-question{
+    font-size:27px;
+    margin:20px 0;
+    color:var(--gold);
+}
+
+.research-steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:30px;
+}
+
+.step{
+    border-left:3px solid var(--gold);
+    padding:15px;
+    background:rgba(255,255,255,.03);
+}
+
+.step strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.step span{
+    color:var(--muted);
+}
+
+/* AI */
+
+.ai-box{
+    max-width:800px;
+    margin:auto;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:30px;
+}
+
+.chat{
+    height:300px;
+    overflow-y:auto;
+    padding:15px;
+    margin-bottom:15px;
+    background:rgba(0,0,0,.15);
+    border-radius:10px;
+}
+
+.message{
+    padding:10px 14px;
+    margin:8px 0;
+    border-radius:10px;
+    max-width:80%;
+}
+
+.user{
+    margin-left:auto;
+    background:var(--blue);
+    color:#07111f;
+}
+
+.bot{
+    background:rgba(255,255,255,.08);
+}
+
+.ai-input{
+    display:flex;
+    gap:10px;
+}
+
+.ai-input input{
+    flex:1;
+    padding:13px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    background:transparent;
+    color:var(--text);
+    outline:none;
+}
+
+.ai-input button{
+    padding:13px 20px;
+    border:0;
+    border-radius:8px;
+    background:var(--gold);
+    cursor:pointer;
+}
+
+/* JOURNEY */
+
+.timeline{
+    border-left:2px solid var(--gold);
+    padding-left:30px;
+}
+
+.timeline-item{
+    margin-bottom:35px;
+    position:relative;
+}
+
+.timeline-item::before{
+    content:"";
+    width:12px;
+    height:12px;
+    background:var(--gold);
+    border-radius:50%;
+    position:absolute;
+    left:-37px;
+    top:8px;
+}
+
+.timeline-item h3{
+    margin-bottom:5px;
+}
+
+.timeline-item p{
+    color:var(--muted);
+}
+
+/* GOALS */
+
+.goals{
+    text-align:center;
+}
+
+.goal-box{
+    padding:50px;
+    background:linear-gradient(
+        135deg,
+        rgba(212,175,55,.12),
+        rgba(93,169,255,.08)
+    );
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+.goal-box h2{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.goal-box p{
+    max-width:700px;
+    margin:auto;
+    color:var(--muted);
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.email{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 25px;
+    border:1px solid var(--gold);
+    border-radius:8px;
+    color:var(--gold);
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px 20px;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .about,
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .skills{
+        grid-template-columns:1fr;
+    }
+
+    .research-steps{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    section{
+        padding:70px 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="nav-container">
+
+<div class="logo">
+Mohammad<span>.</span>
+</div>
+
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#research">Research</a></li>
+<li><a href="#ai">My AI</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<button class="theme" onclick="toggleTheme()">☀ / ☾</button>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+Student • Computer Science • AI
+</div>
+
+<h1>
+Mohammad<br>
+<span>Mohammadi</span>
+</h1>
+
+<p>
+A student passionate about computer science,
+artificial intelligence, programming, and independent research.
+</p>
+
+<div class="buttons">
+
+<a class="btn primary" href="#projects">
+Explore My Work
+</a>
+
+<a class="btn" href="#research">
+Research
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="section-title">
+<small>01 — About</small>
+<h2>Who I Am</h2>
+</div>
+
+<div class="about">
+
+<div>
+
+<p>
+I am a student from Iran interested in computer science,
+artificial intelligence, software development, and research.
+</p>
+
+<br>
+
+<p>
+My goal is to build meaningful projects, strengthen my
+mathematical and programming foundations, and eventually
+study computer science at a leading research university.
+</p>
+
+<br>
+
+<p>
+I believe that learning computer science is not only about
+writing code. It is about asking better questions, solving
+problems, testing ideas, and creating new things.
+</p>
+
+</div>
+
+<div class="info-card">
+
+<div>
+<strong>Current Focus</strong><br>
+Computer Science & AI
+</div>
+
+<div>
+<strong>Learning</strong><br>
+Python • HTML • CSS • JavaScript
+</div>
+
+<div>
+<strong>Interests</strong><br>
+Artificial Intelligence • Algorithms • Research
+</div>
+
+<div>
+<strong>Goal</strong><br>
+Research-oriented Computer Science
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="section-title">
+<small>02 — Foundations</small>
+<h2>Skills & Learning</h2>
+</div>
+
+<div class="skills">
+
+<div class="skill">
+<h3>Python</h3>
+<p>
+Building programming foundations and exploring
+algorithms and artificial intelligence.
+</p>
+</div>
+
+<div class="skill">
+<h3>Web Development</h3>
+<p>
+HTML, CSS and JavaScript for building interactive
+web applications and personal projects.
+</p>
+</div>
+
+<div class="skill">
+<h3>Artificial Intelligence</h3>
+<p>
+Learning how AI systems work and experimenting
+with small AI prototypes.
+</p>
+</div>
+
+<div class="skill">
+<h3>Mathematics</h3>
+<p>
+Strengthening mathematical thinking as a foundation
+for computer science and AI.
+</p>
+</div>
+
+<div class="skill">
+<h3>Problem Solving</h3>
+<p>
+Breaking complex problems into smaller,
+testable and understandable steps.
+</p>
+</div>
+
+<div class="skill">
+<h3>Research</h3>
+<p>
+Learning to formulate questions, test ideas,
+analyze results and improve projects.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="section-title">
+<small>03 — Independent Work</small>
+<h2>Projects</h2>
+</div>
+
+<div class="projects">
+
+<div class="project">
+
+<span class="project-number">PROJECT 01</span>
+
+<h3>Personal Academic Website</h3>
+
+<p>
+A personal portfolio designed to document my
+learning journey, projects, interests and goals
+in computer science.
+</p>
+
+<span class="tag">HTML</span>
+<span class="tag">CSS</span>
+<span class="tag">JavaScript</span>
+
+</div>
+
+
+<div class="project">
+
+<span class="project-number">PROJECT 02</span>
+
+<h3>My First AI</h3>
+
+<p>
+A small experimental AI interface created to
+explore how conversational systems can interact
+with users.
+</p>
+
+<span class="tag">JavaScript</span>
+<span class="tag">AI</span>
+
+</div>
+
+
+<div class="project">
+
+<span class="project-number">PROJECT 03</span>
+
+<h3>Future AI Research</h3>
+
+<p>
+An ongoing project exploring how artificial
+intelligence could help students learn more
+effectively.
+</p>
+
+<span class="tag">Research</span>
+<span class="tag">AI</span>
+
+</div>
+
+
+<div class="project">
+
+<span class="project-number">PROJECT 04</span>
+
+<h3>Learning Python</h3>
+
+<p>
+A growing collection of Python experiments,
+algorithms and programming exercises.
+</p>
+
+<span class="tag">Python</span>
+<span class="tag">Algorithms</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RESEARCH -->
+
+<section id="research">
+
+<div class="section-title">
+<small>04 — Research Lab</small>
+<h2>Independent Research</h2>
+</div>
+
+<div class="research">
+
+<p>
+Current research question:
+</p>
+
+<div class="research-question">
+“How can artificial intelligence help students
+learn more effectively?”
+</div>
+
+<p>
+My approach is to treat this as a real project:
+define a question, build a prototype, test it,
+analyze the results, and improve the idea.
+</p>
+
+<div class="research-steps">
+
+<div class="step">
+<strong>01 — Question</strong>
+<span>Define the problem.</span>
+</div>
+
+<div class="step">
+<strong>02 — Hypothesis</strong>
+<span>Develop a testable idea.</span>
+</div>
+
+<div class="step">
+<strong>03 — Build</strong>
+<span>Create a working prototype.</span>
+</div>
+
+<div class="step">
+<strong>04 — Test</strong>
+<span>Collect observations.</span>
+</div>
+
+<div class="step">
+<strong>05 — Analyze</strong>
+<span>Study the results.</span>
+</div>
+
+<div class="step">
+<strong>06 — Improve</strong>
+<span>Iterate and refine.</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- AI -->
+
+<section id="ai">
+
+<div class="section-title">
+<small>05 — My AI</small>
+<h2>My First AI</h2>
+</div>
+
+<div class="ai-box">
+
+<div class="chat" id="chat">
+
+<div class="message bot">
+Hello! I'm Mohammad's first AI prototype.
+Ask me something.
+</div>
+
+</div>
+
+<div class="ai-input">
+
+<input
+id="userInput"
+type="text"
+placeholder="Ask something..."
+onkeydown="if(event.key==='Enter') aiAnswer()"
+>
+
+<button onclick="aiAnswer()">
+Send
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- JOURNEY -->
+
+<section>
+
+<div class="section-title">
+<small>06 — Journey</small>
+<h2>Learning Journey</h2>
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Discovering Programming</h3>
+<p>
+Started exploring programming and web development.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Building Projects</h3>
+<p>
+Started turning ideas into real websites and
+small software projects.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Exploring AI</h3>
+<p>
+Started learning about artificial intelligence
+and conversational systems.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Research Mindset</h3>
+<p>
+Learning how to formulate questions, test ideas,
+and document results.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Future</h3>
+<p>
+Computer Science • Artificial Intelligence • Research
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GOALS -->
+
+<section class="goals">
+
+<div class="goal-box">
+
+<h2>My Long-Term Goal</h2>
+
+<p>
+To become a strong computer scientist,
+conduct meaningful research, build useful
+technology, and contribute new ideas to the
+field of artificial intelligence.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<div class="section-title">
+<small>07 — Contact</small>
+<h2>Let's Connect</h2>
+</div>
+
+<p>
+For academic, project or collaboration inquiries:
+</p>
+
+<a class="email"
+href="mailto:mohammad.mohammadi201276@gamil.com">
+mohammad.mohammadi201276@gamil.com
+</a>
+
+</section>
+
+
+<footer>
+
+© 2026 Mohammad Mohammadi
+
+<br>
+
+Student Portfolio • Computer Science • AI
+
+</footer>
+
+
+<script>
+
+/* DARK / LIGHT MODE */
+
+function toggleTheme(){
+
+    document.body.classList.toggle("light");
+
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("light")
+        ? "light"
+        : "dark"
+    );
+
+}
+
+if(localStorage.getItem("theme")==="light"){
+    document.body.classList.add("light");
+}
+
+
+/* SIMPLE AI */
+
+function aiAnswer(){
+
+    const input =
+        document.getElementById("userInput");
+
+    const chat =
+        document.getElementById("chat");
+
+    const text =
+        input.value.trim();
+
+    if(!text) return;
+
+    chat.innerHTML += `
+        <div class="message user">
+            ${text}
+        </div>
+    `;
+
+    let answer =
+        "I'm still learning. Try asking me about programming, AI, Python, or Mohammad's projects.";
+
+    const lower = text.toLowerCase();
+
+    if(lower.includes("hello") ||
+       lower.includes("hi") ||
+       lower.includes("سلام")){
+
+        answer =
+        "Hello! Welcome to Mohammad's AI project.";
+
+    }
+
+    else if(lower.includes("python")){
+
+        answer =
+        "Python is one of the main programming languages I'm learning.";
+
+    }
+
+    else if(lower.includes("ai") ||
+            lower.includes("هوش مصنوعی")){
+
+        answer =
+        "Artificial Intelligence is one of Mohammad's main areas of interest.";
+
+    }
+
+    else if(lower.includes("project") ||
+            lower.includes("پروژه")){
+
+        answer =
+        "You can explore Mohammad's projects in the Projects section.";
+
+    }
+
+    setTimeout(function(){
+
+        chat.innerHTML += `
+            <div class="message bot">
+                ${answer}
+            </div>
+        `;
+
+        chat.scrollTop =
+            chat.scrollHeight;
+
+    },500);
+
+    input.value="";
+
+}
+
+</script>
+
+</body>
+</html>
